@@ -2,16 +2,27 @@
 #include <cstring>
 #include "student.h"
 
-Student::Student(){
+using namespace std;
+
+Student::Student(){ //Construct student with ids and names from console inputs
   char* input = new char[20];
   cout << "Enter an id number." << endl;
-  cin >> id;
+  while(!(cin >> id)){ //Preventing that pesky infinite loop from char inputs
+    cout << "(Please enter an integer.)" << endl;
+    cin.clear();
+    cin.ignore(10000,'\n');
+  }
   cin.ignore();
   cout << "Enter a name." << endl;
   cin.getline(input,20);
-  name = input;
+  strcpy(name,input);
+  cout << "(Set name to: " << name << ")" << endl;
+}
+
+char* Student::getName(){
+  return name;
 }
 
 Student::~Student(){
-  delete name;
+  delete[] name;
 }
