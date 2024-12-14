@@ -27,7 +27,7 @@ void Node::searchList(){
   if(nexNode != nullptr){
     cout << this->getStudent()->getName() << ", "; //Assignment desc said we needed to use getStudent() :/
   } else if (nexNode == nullptr) {
-    cout << student->getName() << endl;
+    cout << ", and " << student->getName() "." << endl;
     return;
   }
   nexNode->searchList();
