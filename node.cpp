@@ -4,15 +4,15 @@
 
 using namespace std;
 
-Node::Node(Student* setStudent){
-  student = setStudent;
+Node::Node(Student* student){
+  this->student = student;
   nexNode = nullptr;
 }
 
 void Node::setNext(Node* node){
   cout << endl;
   char* input = new char[20];
-  if(nexNode == nullptr){
+  if(this->getNext() == nullptr){ //Assignment desc said we needed to use getNext() :/
     nexNode = node;
   }
   cout << "(enter add to add another student.)" << endl;
@@ -25,10 +25,9 @@ void Node::setNext(Node* node){
 
 void Node::searchList(){
   if(nexNode != nullptr){
-    cout << student->getName() << ", ";
+    cout << this->getStudent()->getName() << ", "; //Assignment desc said we needed to use getStudent() :/
   } else if (nexNode == nullptr) {
     cout << student->getName() << endl;
-    cout << "Ending search." << endl << endl;
     return;
   }
   nexNode->searchList();
