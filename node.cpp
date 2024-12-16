@@ -25,24 +25,24 @@ void Node::setNext(Node* node){
 
 void Node::searchList(){
   if(nexNode != nullptr){
-    cout << this->getStudent()->getName() << ", "; //Assignment desc said we needed to use getStudent() :/
+    cout << ", " << nexNode->getStudent()->getName(); //Assignment desc said we needed to use getStudent() :/
   } else if (nexNode == nullptr) {
-    cout << ", and " << student->getName() "." << endl;
     return;
   }
   nexNode->searchList();
 }
 
-
 Student* Node::getStudent(){
   return student;
 }
+
 Node* Node::getNext(){
   if(nexNode != nullptr){
     return nexNode;
   }
   return nullptr;
 }
+
 Node::~Node(){
   delete student; 
 }

@@ -3,10 +3,13 @@
 
 class Student {
 public:
-  int id; 
-  char* name = new char[20];
+  char* getName();
   Student();
   ~Student();
+private:
+  int id;
+  char* name = new char[20];
+  float gpa;
 };
 
 #endif

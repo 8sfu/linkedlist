@@ -1,4 +1,4 @@
-\#include <iostream>
+#include <iostream>
 #include <cstring>
 #include "student.h"
 
@@ -16,7 +16,9 @@ Student::Student(){ //Construct student with ids and names from console inputs
   cout << "Enter a name." << endl;
   cin.getline(input,20);
   strcpy(name,input);
-  cout << "(Set name to: " << name << ")" << endl;
+  cout << "Enter a gpa." << endl;
+  cin >> gpa;
+  cin.ignore();
 }
 
 char* Student::getName(){
